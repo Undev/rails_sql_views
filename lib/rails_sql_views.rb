@@ -23,6 +23,8 @@
 
 $:.unshift(File.dirname(__FILE__))
 
+if Rails::VERSION::MAJOR <= 3
+
 require 'active_record'
 
 require 'core_ext/module'
@@ -49,3 +51,5 @@ ActiveRecord::SchemaDumper.class_eval do
 end
 
 RailsSqlViews::Loader.load_extensions
+
+end
